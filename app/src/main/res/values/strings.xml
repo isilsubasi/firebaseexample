@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">isilfirebase</string>
+    <string name="btnCrash">Crash</string>
+    <string name="btnAnalitik">Analitik</string>
+    <string name="btnNotification">Notification</string>
+    <string name="btnFireStore">FireStore</string>
+    <string name="txtName">Işıl Subaşi</string>
+    <string name="txtNo">2048</string>
+
 </resources>
