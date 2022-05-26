@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "678398366976",
+    "project_id": "isilfirebase-91003",
+    "storage_bucket": "isilfirebase-91003.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678398366976:android:0b32cd903ffd269d110fe5",
+        "android_client_info": {
+          "package_name": "com.isilsubasi.isilfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678398366976-t4p7bf0f1vkfh32dl60ai1g9legdm17c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbpfCLp9pR8mZFvY88jCmPg4kd-cFic0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678398366976-t4p7bf0f1vkfh32dl60ai1g9legdm17c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
