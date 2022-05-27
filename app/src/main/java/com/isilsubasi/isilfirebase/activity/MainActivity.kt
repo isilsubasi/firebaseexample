@@ -3,8 +3,10 @@ package com.isilsubasi.isilfirebase.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.analytics.FirebaseAnalytics
-import com.isilsubasi.isilfirebase.service.ApiClient
+import com.google.firebase.messaging.FirebaseMessaging
 import com.isilsubasi.isilfirebase.databinding.ActivityMainBinding
 import com.isilsubasi.isilfirebase.util.Constants
 
@@ -12,18 +14,36 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var firebaseAnalytics: FirebaseAnalytics
-    private val apiClient by lazy { ApiClient() }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAnalytics = FirebaseAnalytics.getInstance(this)
         init()
+
+
+
     }
 
 
     private fun init() {
+        getFcmToken()
         onClickListener()
+    }
+
+    private fun getFcmToken(){
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w(Constants.TAG, "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+
+            // Get new FCM registration token
+            val token = task.result
+            Log.w(Constants.TAG, token)
+        })
+
     }
 
     private fun onClickListener() {
@@ -46,22 +66,12 @@ class MainActivity : AppCompatActivity() {
             }
             btnNotification.setOnClickListener {
 
+
+
             }
             btnFireStore.setOnClickListener {
 
-                apiClient.getUserFromApi { isSuccess, response, message ->
-                    if (isSuccess) {
-                        val name = response?.documents?.first()?.fields?.adi!!.stringValue
-                        val no = response?.documents?.first()?.fields?.no!!.integerValue
-                        val intent = Intent(applicationContext, DetailActivity::class.java)
-                        intent.putExtra(Constants.OGRENCI_ADI, name)
-                        intent.putExtra(Constants.OGRENCI_NO, no)
-                        startActivity(intent)
 
-                    }
-
-
-                }
 
             }
 

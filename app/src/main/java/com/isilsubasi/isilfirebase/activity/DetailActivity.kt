@@ -18,16 +18,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun init(){
-        val name = intent.getStringExtra(Constants.OGRENCI_ADI)
-        val no = intent.getStringExtra(Constants.OGRENCI_NO)
 
-        binding.apply {
-
-            txtOgrenciAdi.text=name
-            txtOgrenciNo.text=no
-        }
-
-        Log.e("isil",name + no)
     }
 
 }
