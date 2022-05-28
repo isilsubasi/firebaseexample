@@ -7,6 +7,7 @@ import android.util.Log
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.messaging.RemoteMessage
 import com.isilsubasi.isilfirebase.databinding.ActivityMainBinding
 import com.isilsubasi.isilfirebase.util.Constants
 
@@ -35,13 +36,13 @@ class MainActivity : AppCompatActivity() {
     private fun getFcmToken(){
         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
             if (!task.isSuccessful) {
-                Log.w(Constants.TAG, "Fetching FCM registration token failed", task.exception)
+                Log.v(Constants.TAG, "Fetching FCM registration token failed", task.exception)
                 return@OnCompleteListener
             }
 
             // Get new FCM registration token
             val token = task.result
-            Log.w(Constants.TAG, token)
+            Log.v(Constants.TAG, token)
         })
 
     }
