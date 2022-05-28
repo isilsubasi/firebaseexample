@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.RemoteMessage
 import com.isilsubasi.isilfirebase.databinding.ActivityMainBinding
@@ -72,6 +74,7 @@ class MainActivity : AppCompatActivity() {
             }
             btnFireStore.setOnClickListener {
 
+                startActivity(Intent(applicationContext,DetailActivity::class.java))
 
 
             }

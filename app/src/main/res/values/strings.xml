@@ -5,6 +5,6 @@
     <string name="btnNotification">Notification</string>
     <string name="btnFireStore">FireStore</string>
     <string name="txtName">Işıl Subaşi</string>
-    <string name="txtNo">2048</string>
+    <string name="txtAge">27</string>
 
 </resources>
